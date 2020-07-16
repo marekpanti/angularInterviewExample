@@ -1,0 +1,252 @@
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Registrácia zamestnanca - Reactive</h2>
+    <form [formGroup]="employeeForm">
+      <article>
+        <h5 class="my-4">Základné informácie</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="street">Meno:</label>
+              <input
+                type="text"
+                class="form-control"
+                minlength="3"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['name'].valid &&
+                    employeeForm.controls['name'].touched
+                }"
+                formControlName="name"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  !employeeForm.controls['name'].valid &&
+                  employeeForm.controls['name'].touched
+                "
+              >
+                Prosím vyplňte povinné pole.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="suite">Priezvisko:</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['surname'].valid &&
+                    employeeForm.controls['surname'].touched
+                }"
+                formControlName="surname"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  !employeeForm.controls['surname'].valid &&
+                  employeeForm.controls['surname'].touched
+                "
+              >
+                Prosím vyplňte povinné pole.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="suite">Dátum narodenia:</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="birthday"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="street">Pozícia:</label>
+              <select
+                class="custom-select"
+                formControlName="position"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['position'].valid &&
+                    employeeForm.controls['position'].touched
+                }"
+              >
+                <option selected disabled>Vyberte pozíciu</option>
+                <option
+                  *ngFor="let position of positions"
+                  [ngValue]="position.value"
+                  >{{ position.value }}</option
+                >
+              </select>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <h5 class="my-4">Adresa</h5>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="form-group">
+              <label for="street">Ulica:</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="street"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['street'].valid &&
+                    employeeForm.controls['street'].touched
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  !employeeForm.controls['street'].valid &&
+                  employeeForm.controls['street'].touched
+                "
+              >
+                Prosím vyplňte povinné pole.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="houseNumber">Číslo domu:</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="houseNumber"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['houseNumber'].valid &&
+                    employeeForm.controls['houseNumber'].touched
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  !employeeForm.controls['houseNumber'].valid &&
+                  employeeForm.controls['houseNumber'].touched
+                "
+              >
+                Prosím skotnrolujte, či je číslo vyplnené správne.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="form-group">
+            <label for="city">Mesto:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="city"
+              [ngClass]="{
+                'is-invalid':
+                  !employeeForm.controls['city'].valid &&
+                  employeeForm.controls['city'].touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                !employeeForm.controls['city'].valid &&
+                employeeForm.controls['city'].touched
+              "
+            >
+              Prosím vyplňte povinné pole.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="zipcode">PSČ:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="postal"
+              [ngClass]="{
+                'is-invalid':
+                  !employeeForm.controls['postal'].valid &&
+                  employeeForm.controls['postal'].touched
+              }"
+            />
+          </div>
+        </div>
+      </div>
+      <article>
+        <h5 class="my-4">Kontakné informácie</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">Telefónne číslo:</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="number"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['number'].valid &&
+                    employeeForm.controls['number'].touched
+                }"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="website">Web:</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="web"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['web'].valid &&
+                    employeeForm.controls['web'].touched
+                }"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid':
+                    !employeeForm.controls['email'].valid &&
+                    employeeForm.controls['email'].touched
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </article>
+      <button
+        type="submit"
+        [disabled]="!employeeForm.valid"
+        class="my-2 btn btn-primary"
+        (click)="submit()"
+      >
+        Potvrdiť registráciu
+      </button>
+      <div *ngIf="!employeeForm.valid">
+        Prosim vyplnte vsetky povinne polia pred odoslanim
+      </div>
+    </form>
+  </div>
+</section>

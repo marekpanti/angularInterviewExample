@@ -1,0 +1,106 @@
+<section>
+  <div class="container py-5">
+    <h1>Inštrukcie</h1>
+    <hr />
+    <div>
+      <p>
+        Pripravte Angular aplikáciu podľa zadaní
+        <strong>Task 1 - Employees</strong> a <strong>Task 2 - Posts</strong> a
+        demonštrujte znalosť viacerých prístupov na tvorbu formulárov a celkovú
+        znalosť tvorby aplikácie v tomto frameworku.<br />
+        V prípade nutnosti môžete použiť lubovoľné knižnice vhodné pre Angular
+        Framework.
+      </p>
+      <p>
+        Výstup by mal byť nasledovný:
+      </p>
+      <ol>
+        <li>postup build-u aplikácie</li>
+        <li>dev server z ktorého aplikácia bude servovaná</li>
+        <li>unit testy</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h1>Task 1 - Employees</h1>
+    <hr />
+    <p>
+      Pripravte modul tejto aplikácie "<strong>Employee</strong>" prístupom pre
+      tvorbu formulárov "<strong>Template-driven Forms</strong>" a "<strong
+        >Reactive Forms</strong
+      >". Jednotlivé vstupné polia by mali obsahovať
+      <strong>validačné pravidlá</strong>. Okrem registračného formulára bude
+      komponent obsahovať aj <strong>výpis registrovaných zamestnancov</strong>.
+      Jednotlivé karty zamestnancov <strong>je možné odstrániť</strong>. Pred
+      dokončením akcie odstránenia je vhodné využiť
+      <strong>konfirmačné modálne okno</strong>. Dáta budú uložené lokálne
+      <strong>bez nutnosti použitia databázy</strong>.
+    </p>
+    <p>
+      <em>Bonus – dynamický formulár a/alebo FormArray.</em>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container py-5">
+    <h1>Task 2 - Posts</h1>
+    <hr />
+    <div>
+      <p>
+        Pripravte modul tejto aplikácie "<strong>Post</strong>" prístupom
+        získavaním dát zo servera. Tento modul musí obsahovať podstránku
+        <strong>zoznam článkov</strong> a <strong>detail článku</strong> s
+        <strong>prislúchajúcimi komentármi</strong>.
+      </p>
+      <div class="table-responsive">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Method</th>
+              <th scope="col">Endpoint</th>
+              <th scope="col">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">GET</th>
+              <td>/posts</td>
+              <td>
+                <a
+                  href="https://jsonplaceholder.typicode.com/posts"
+                  target="_blank"
+                  >https://jsonplaceholder.typicode.com/posts</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">GET</th>
+              <td>/posts/1</td>
+              <td>
+                <a
+                  href="https://jsonplaceholder.typicode.com/posts/1"
+                  target="_blank"
+                  >https://jsonplaceholder.typicode.com/posts/1</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">GET</th>
+              <td>/comments</td>
+              <td>
+                <a
+                  href="https://jsonplaceholder.typicode.com/comments?postId=1"
+                  target="_blank"
+                  >https://jsonplaceholder.typicode.com/comments?postId=1</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

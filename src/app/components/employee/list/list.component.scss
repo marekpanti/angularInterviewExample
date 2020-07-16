@@ -1,0 +1,13 @@
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  max-width: 1170px;
+  margin: 0 auto;
+  & .item {
+    width: 320px;
+    margin: 1rem;
+  }
+}

@@ -1,0 +1,21 @@
+<section>
+  <div class="container py-5">
+    <button
+      class="my-2 btn btn-primary"
+      (click)="formType = 'template'"
+      [ngClass]="{ selected: formType === 'template' }"
+    >
+      Template Driven
+    </button>
+    <button
+      (click)="formType = 'reactive'"
+      class="my-2 btn btn-primary"
+      [ngClass]="{ selected: formType === 'reactive' }"
+    >
+      Reactive Form
+    </button>
+  </div>
+</section>
+<app-template-driven *ngIf="formType === 'template'"></app-template-driven>
+<app-dynamic *ngIf="formType === 'reactive'"></app-dynamic>
+<app-list></app-list>

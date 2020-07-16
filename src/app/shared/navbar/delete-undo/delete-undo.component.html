@@ -1,0 +1,19 @@
+<button
+  *ngIf="!showUndo"
+  (click)="onRemove()"
+  [disabled]="isDeleteDisabled"
+  type="button"
+  class="btn btn-secondary float-right"
+  type="button"
+>
+  Delete
+</button>
+<button
+  *ngIf="showUndo"
+  (click)="onUndo()"
+  type="button"
+  type="button"
+  class="btn btn-secondary float-right"
+>
+  Undo({{ countDownValue | async }})
+</button>

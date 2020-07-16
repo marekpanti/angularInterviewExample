@@ -1,0 +1,14 @@
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  max-width: 1170px;
+  margin: 0 auto;
+  & .post {
+    min-width: 320px;
+    width: 30%;
+    margin: 1rem;
+  }
+}

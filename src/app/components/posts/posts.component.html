@@ -1,0 +1,20 @@
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Zoznam článkov</h2>
+    <div class="alert alert-info" role="alert" *ngIf="posts.length === 0">
+      Momentálne neevidujeme žiadne články.
+    </div>
+    <div class="posts">
+      <!-- card -->
+      <div class="card post" *ngFor="let post of posts">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">
+            {{ post.body }}
+          </p>
+          <a [routerLink]="[post.id]" class="card-link">čítaj viac</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
