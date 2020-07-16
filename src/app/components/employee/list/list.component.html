@@ -55,9 +55,9 @@
                 Vymaž
               </button> -->
               <app-delete-undo
-                [id]="i"
+                [id]="item.uuid"
                 (click)="$event.stopPropagation()"
-                (remove)="remove(i)"
+                (remove)="remove(item.uuid)"
               ></app-delete-undo>
             </div>
           </div>

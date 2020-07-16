@@ -23,6 +23,7 @@
     "@angular/router": "~10.0.4",
     "@fullcalendar/core": "^4.3.1",
     "@ngrx/store": "^9.2.0",
+    "angular2-uuid": "^1.1.1",
     "bootstrap": "^4.4.1",
     "ngx-bootstrap": "^5.3.2",
     "ngx-highlightjs": "^4.0.2",

@@ -16,6 +16,7 @@ export const initialState: StoreModel = {
       number: '9',
       web: 'ask.sk',
       email: 'ask@ask.sk',
+      uuid: '2',
     },
   ],
   posts: [],
@@ -30,9 +31,15 @@ const appReducer = createReducer(
     };
   }),
   on(AppActions.removeEmployee, (state: StoreModel, { id }) => {
+    // to get index of employee in array based on uuid
+    const indexToRemove = state.employees
+      .map((employee) => employee.uuid)
+      .indexOf(id);
     return {
       ...state,
-      employees: state.employees.filter((item, index) => index !== id),
+      employees: state.employees.filter(
+        (item, index) => index !== indexToRemove // Filter() doesn't create refference and we are filtering/deleting employee
+      ),
     };
   })
 );

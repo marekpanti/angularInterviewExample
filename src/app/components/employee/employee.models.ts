@@ -10,6 +10,7 @@ export interface Employee {
   number: string;
   web: string;
   email: string;
+  uuid: string;
 }
 
 export const Positions = [

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee, Positions } from '../employee.models';
 import { Store } from '@ngrx/store';
 import { submitEmployee } from 'src/app/store/app.actions';
+import { UUID } from 'angular2-uuid';
 
 @Component({
   selector: 'app-template-driven',
@@ -22,12 +23,16 @@ export class TemplateDrivenComponent {
     number: '',
     web: '',
     email: '',
+    uuid: '',
   };
-  form: Employee = this.initialForm;
+  form: Employee = { ...this.initialForm };
 
   constructor(private store: Store<{ appReducer }>) {}
 
-  submit() {
+  submit(form) {
+    this.form.uuid = UUID.UUID();
     this.store.dispatch(submitEmployee({ employee: this.form })); // Cleaner solution would be to create a service Facade
+    this.form = { ...this.initialForm };
+    form.resetForm();
   }
 }

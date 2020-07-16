@@ -8,5 +8,5 @@ export const submitEmployee = createAction(
 
 export const removeEmployee = createAction(
   '[Employee Page] REMOVE EMPLOYEE',
-  props<{ id: number }>()
+  props<{ id: string }>()
 );

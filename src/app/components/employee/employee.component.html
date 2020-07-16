@@ -2,13 +2,13 @@
   <div class="container py-5">
     <button
       class="my-2 btn btn-primary"
-      (click)="formType = 'template'"
+      (click)="selectFormType('template')"
       [ngClass]="{ selected: formType === 'template' }"
     >
       Template Driven
     </button>
     <button
-      (click)="formType = 'reactive'"
+      (click)="selectFormType('reactive')"
       class="my-2 btn btn-primary"
       [ngClass]="{ selected: formType === 'reactive' }"
     >

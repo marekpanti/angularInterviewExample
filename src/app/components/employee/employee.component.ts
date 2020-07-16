@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee.component.scss'],
 })
 export class EmployeeComponent {
-  formType = 'template';
+  formType = '';
+
+  selectFormType(formType) {
+    switch (formType) {
+      case 'template':
+        formType === this.formType
+          ? (this.formType = '')
+          : (this.formType = formType);
+        break;
+      case 'reactive':
+        formType === this.formType
+          ? (this.formType = '')
+          : (this.formType = formType);
+        break;
+      default:
+        break;
+    }
+  }
 }

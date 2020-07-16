@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Positions } from '../employee.models';
 import { Store } from '@ngrx/store';
 import { submitEmployee } from 'src/app/store/app.actions';
+import { UUID } from 'angular2-uuid';
 
 @Component({
   selector: 'app-dynamic',
@@ -39,10 +40,13 @@ export class DynamicComponent implements OnInit {
           validators: [Validators.required, Validators.email],
         },
       ],
+      uuid: [null],
     });
   }
 
   submit() {
+    this.employeeForm.controls.uuid.setValue(UUID.UUID());
     this.store.dispatch(submitEmployee({ employee: this.employeeForm.value })); // Cleaner solution would be to create a service Facade
+    this.employeeForm.reset();
   }
 }
