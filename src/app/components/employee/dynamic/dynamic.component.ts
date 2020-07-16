@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Positions } from '../employee.models';
 import { Store } from '@ngrx/store';
-import { submitEmployee } from 'src/app/store/app.actions';
 import { UUID } from 'angular2-uuid';
+import { submitEmployee } from '../../../store/app.actions';
 
 @Component({
   selector: 'app-dynamic',

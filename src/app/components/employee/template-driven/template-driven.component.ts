@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Employee, Positions } from '../employee.models';
 import { Store } from '@ngrx/store';
-import { submitEmployee } from 'src/app/store/app.actions';
 import { UUID } from 'angular2-uuid';
+import { submitEmployee } from '../../../store/app.actions';
 
 @Component({
   selector: 'app-template-driven',
