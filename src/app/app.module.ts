@@ -5,8 +5,8 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { InstructionsComponent } from './components/instructions/instructions.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, InstructionsComponent],

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RegisterModel, Positions } from '../employee.models';
+import { Employee, Positions } from '../employee.models';
 import { Store } from '@ngrx/store';
 import { submitEmployee } from 'src/app/store/app.actions';
 
@@ -10,7 +10,7 @@ import { submitEmployee } from 'src/app/store/app.actions';
 })
 export class TemplateDrivenComponent {
   positions = Positions;
-  initialForm: RegisterModel = {
+  initialForm: Employee = {
     name: '',
     surname: '',
     birthday: '',
@@ -23,7 +23,7 @@ export class TemplateDrivenComponent {
     web: '',
     email: '',
   };
-  form: RegisterModel = this.initialForm;
+  form: Employee = this.initialForm;
 
   constructor(private store: Store<{ appReducer }>) {}
 

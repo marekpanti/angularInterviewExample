@@ -8,14 +8,12 @@ const routes: Routes = [
   {
     path: 'employees',
     loadChildren: () =>
-      import('./components/employee/employee.module').then(
-        (m) => m.EmployeeModule
-      ),
+      import('./modules/employee.module').then((m) => m.EmployeeModule),
   },
   {
     path: 'posts',
     loadChildren: () =>
-      import('./components/posts/posts.module').then((m) => m.PostsModule),
+      import('./modules/posts.module').then((m) => m.PostsModule),
   },
 ];
 

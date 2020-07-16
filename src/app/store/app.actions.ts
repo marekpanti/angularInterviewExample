@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { RegisterModel } from '../components/employee/employee.models';
+import { Employee } from '../components/employee/employee.models';
 
 export const submitEmployee = createAction(
   '[Employee Page] SUBMIT EMPLOYEE',
-  props<{ employee: RegisterModel }>()
+  props<{ employee: Employee }>()
 );
 
 export const removeEmployee = createAction(

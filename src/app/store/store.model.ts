@@ -1,6 +1,6 @@
-import { RegisterModel } from '../components/employee/employee.models';
+import { Employee } from '../components/employee/employee.models';
 
 export interface StoreModel {
-  employees: RegisterModel[];
+  employees: Employee[];
   posts: Array<any>;
 }

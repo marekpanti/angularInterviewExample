@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RegisterModel } from '../employee.models';
+import { Employee } from '../employee.models';
 import { Store } from '@ngrx/store';
 import { removeEmployee } from 'src/app/store/app.actions';
 import { StoreModel } from 'src/app/store/store.model';
-import { DeleteUndoService } from 'src/app/shared/navbar/delete-undo/delete-undo.service';
+import { DeleteUndoService } from '../../delete-undo/delete-undo.service';
 
 @Component({
   selector: 'app-list',
@@ -17,7 +17,7 @@ export class ListComponent {
     private store: Store<{ appReducer: StoreModel }>,
     private countDown: DeleteUndoService
   ) {
-    this.employees$ = this.store.select<RegisterModel[]>(
+    this.employees$ = this.store.select<Employee[]>(
       (state) => state.appReducer.employees
     );
   }

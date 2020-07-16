@@ -5,7 +5,7 @@
       {{ postDetail.body }}
     </p>
     <div class="py-5">
-      <h4 class="mb-4">Komentáre ({{ comments.length }})</h4>
+      <h4 class="mb-4">Komentáre ({{ comments ? comments.length : '' }})</h4>
       <div class="card mb-3" *ngFor="let comment of comments">
         <div class="card-body">
           <h5 class="card-title">{{ comment.name }}</h5>
